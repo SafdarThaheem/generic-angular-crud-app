@@ -6,10 +6,10 @@ import { Validators } from '@angular/forms';
 })
 export class DynamicTableService {
   keyObject = {
-    firstName: ['', [Validators.required]],
-    lastName: ['', [Validators.required]],
-    age: ['', [Validators.required, Validators.min(2)]],
-    city: ['', [Validators.required]],
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    age: ['', [Validators.required, Validators.minLength(2)]],
+    city: ['', Validators.required],
     balance: ['', [Validators.required, Validators.minLength(2)]],
     creditCardNumber: ['', [Validators.required, Validators.maxLength(15)]],
     phone: ['', [Validators.required, Validators.maxLength(11)]],
@@ -24,6 +24,10 @@ export class DynamicTableService {
     { key: 'creditCardNumber', name: 'Credit Card', type: 'text' },
     { key: 'phone', name: 'Phone', type: 'text' },
   ];
+
+
+
+
 
   constructor() {}
 }
